@@ -1,0 +1,43 @@
+<p>Lista Alumnos</p>
+
+<p>Selecciona formato a mostrar</p>
+<div>
+  <input type="radio" name="modoVista" value="0" (change)="mostrarLista()" id="lista">
+  <label for="lista">Ver como Lista</label><br>
+
+  <input type="radio" name="modoVista" value="1" (change)="mostrarTabla()" id="tabla">
+  <label for="tabla">Ver como Tabla</label><br>
+</div>
+
+<p *ngIf="tipoVista===false; else listaView"></p>
+<p *ngIf="tipoVista===true; else tablaView"></p>
+
+<ng-template #listaView>
+  <div>
+    <ul *ngFor="let student of listaAlumnos">
+      <li>{{student.nombre}} </li>
+      <li>{{student.apellidos}} </li>
+      <li>{{student.correo}} </li>
+      <li>{{student.fechaIngreso | date:'shortDate'}} </li>
+    </ul>
+  </div>
+</ng-template>
+
+<ng-template #tablaView>
+  <div>
+    <table>
+      <tr>
+        <th>Nombre</th>
+        <th>Apellido</th>
+        <th>Correo</th>
+        <th>Fecha Ingreso</th>
+      </tr>
+      <tr *ngFor="let student of listaAlumnos">
+        <td>{{student.nombre}} </td>
+        <td>{{student.apellidos}} </td>
+        <td>{{student.correo}} </td>
+        <td>{{student.fechaIngreso | date:'shortDate'}} </td>
+      </tr>
+    </table>
+  </div>
+</ng-template>

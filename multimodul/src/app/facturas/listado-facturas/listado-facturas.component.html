@@ -1,0 +1,13 @@
+<p>Agregar Factura</p>
+<input type="button" value="Agregar Factura" (click)="agregarFactura()">
+
+<p>Buscar Factura</p>
+Id de la Factura: <input type="text" id="idFactura" [(ngModel)]="idBuscado"><br />
+<input type="button" value="Buscar" (click)="buscarFactura()"><br />
+
+<h1>Lista de Facturas</h1>
+<ol>
+  <li *ngFor="let factura of facturas">
+    {{factura.id}} - {{factura.fecha}} - {{factura.cliente}} - {{factura.monto}}
+  </li>
+</ol>

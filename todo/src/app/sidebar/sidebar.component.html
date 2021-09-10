@@ -1,0 +1,8 @@
+<p>{{dato1}} </p>
+
+<p [innerText]='dato1'></p>
+
+<p [class.seleccionado]="estaSeleccionado">Ejemplo puede o no estar seleccionado</p>
+Seleccionado: <input type="checkbox" id="seleccionadoONo" [(ngModel)]="estaSeleccionado" (change)="checkboxChanged()">
+
+<p [class]="misClases">Ejemplo de aplicacion de varios estilos</p>

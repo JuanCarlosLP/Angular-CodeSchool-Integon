@@ -1,0 +1,30 @@
+<h3>Agregar Nota</h3>
+
+  <label for="nuevoTitulo">Titulo: </label>
+  <input type="text" id="nuevoTitulo" [(ngModel)]="titulo"/><br/>
+  <label for="nuevoContenido">Contenido: </label>
+  <input type="text" id="nuevoContenido" [(ngModel)]="contenido"/><br/>
+  <input type="button" value="Agregar Nota" (click)="guardarNota()"/>
+
+  <h3>Actualizar Nota</h3>
+
+  <label for="notaId">Id: </label>
+  <input type="text" id="notaId" [(ngModel)]="idUpdate"/><br/>
+  <label for="tituloModificado">Titulo: </label>
+  <input type="text" id="tituloModificado" [(ngModel)]="tituloUpdate"/><br/>
+  <label for="contenidoModificado">Contenido: </label>
+  <input type="text" id="contenidoModificado" [(ngModel)]="contenidoUpdate"/><br/>
+  <input type="button" value="Actualizar Nota" (click)="actualizarNota()"/>
+
+  <h3>Borrar Nota</h3>
+
+  <label for="notaIdDelete">Id: </label>
+  <input type="text" id="notaIdDelete" [(ngModel)]="idDelete"/><br/>
+  <input type="button" value="Borrar Nota" (click)="borrarNota()"/>
+
+<h3>Lista de {{notes.length}} Notas recibidas</h3>
+<ul>
+  <li *ngFor="let note of notes">
+    {{note._id}} - {{note.title}} - {{note.content}}
+  </li>
+</ul>

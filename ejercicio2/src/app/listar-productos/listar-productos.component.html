@@ -1,0 +1,13 @@
+<h1>Lista de Productos</h1>
+<p>Productos en la lista: {{productoAgregado.length}} </p>
+
+<table>
+  <tr *ngFor="let producto of productoAgregado">
+    <td>{{producto.nombre}}</td>
+    <td>{{producto.precio}}</td>
+  </tr>
+</table>
+
+<h1>Total: {{total}}</h1>
+
+<input type="button" value="Finalizar Compra" (click)="compraFinalizada.emit()" />
